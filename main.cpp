@@ -8,23 +8,59 @@
 ///----------------------------------------------------///
 /// 					関数の作成
 ///----------------------------------------------------///
+///====================大小比較関数====================///
 template <typename T>
-Min(T T1, T T2) {
+T Min(T T1, T T2) {
 	if (T1 < T2) {
-		return T2;
+		return T1;  // 小さい値を返す
+	} else {
+		return T2;  // 大きい場合はT2を返す
 	}
+}
+
+///----------------特殊化----------------///
+/// char型に対する特殊化（エラーメッセージを表示）
+template <>
+char Min(char T1, char T2) {
+	printf("数字以外は代入できません\n");
+	return 0;
 }
 
 ///----------------------------------------------------///
 /// 				変数の宣言・初期化
 ///----------------------------------------------------///
+///====================Int型====================///
+int numIntA = 1;
+int numIntB = 2;
+
+///====================Float型====================///
+float numFloatA = 3.0f;
+float numFloatB = 4.0f;
+
+///====================Double型====================///
+double numDoubleA = 5.0f;
+double numDoubleB = 6.0f;
+
+///====================Char型====================///
+char numCharA = 'A';
+char numCharB = 'B';
+
 
 ///----------------------------------------------------///
 ///							処理
 ///----------------------------------------------------///
 int main() {
-	SetConsoleOutputCP(65001);
-	printf("HELLOhello");
-	printf("丸岡春稀ですよ");
+	SetConsoleOutputCP(65001);  // UTF-8の文字コード設定
+
+	///====================処理====================///
+	// int型出力	
+	printf("Int型 = %d\n", Min<int>(numIntA, numIntB));
+	// float型出力
+	printf("Float型 = %f\n", Min<float>(numFloatA, numFloatB));
+	// double型出力
+	printf("Double型 = %f\n", Min<double>(numDoubleA, numDoubleB));
+	// char型出力（エラーメッセージ）
+	printf("Char型 = %d\n", Min<char>(numCharA, numCharB));
+
 	return 0;
 }
