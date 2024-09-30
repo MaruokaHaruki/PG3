@@ -15,6 +15,7 @@
 ///							処理
 ///----------------------------------------------------///
 int main() {
+	SetConsoleOutputCP(65001);
 	printf("HELLOhello");
 	printf("丸岡春稀ですよ");
 	return 0;
