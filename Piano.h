@@ -16,7 +16,7 @@ class Piano : public Instrument {
 public:
     ///--------------------------------------------------------------
 	///						 メンバ関数
-    void playSound() const override {
+    void playSound()  override {
         printf("ピアノの音だ！ぽろろん！\n");
     }
 };
