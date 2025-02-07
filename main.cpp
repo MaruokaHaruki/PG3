@@ -63,7 +63,7 @@ void displayMapChips(const std::vector<std::vector<int>> &mapChips) {
 		for(const auto &cell : row) {
 			switch(cell) {
 			case 0:
-				printf("　"); // 全角スペース
+				printf("　"); // 不本意ながら全角スペース
 				break;
 			case 1:
 				printf("地");
